@@ -5,8 +5,19 @@
 
   <div class="flex flex-row gap-4 my-5">
     <% poll.options.each do |option| %>
-      <div class="rounded-lg py-3 px-5 bg-blue-500 inline-block font-medium text-white">
+      <%= form_with(model: UserVote.new, url: user_votes_path, method: :post) do |form| %>
+        <%= form.hidden_field :option_id, value: option.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.submit option.name, class: "rounded-lg py-3 px-5 bg-blue-500 inline-block font-medium text-white" %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div class="flex flex-row gap-4 my-5">
+    <% poll.options.each do |option| %>
+      <div class="rounded-lg py-3 px-5 border-black border-solid border-2 inline-block font-medium">
         <%= option.name %>
+        <%= option.user_votes.count %>
       </div>
     <% end %>
   </div>

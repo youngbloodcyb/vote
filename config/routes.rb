@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :options
   resources :polls
   resources :users
-  root "polls#new"
+  root "polls#index"
 end

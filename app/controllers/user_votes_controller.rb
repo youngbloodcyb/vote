@@ -64,7 +64,11 @@ class UserVotesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+    # def user_vote_params
+    #   params.fetch(:user_vote, {})
+    # end
+
     def user_vote_params
-      params.fetch(:user_vote, {})
+      params.require(:user_vote).permit(:option_id, :user_id)
     end
 end
