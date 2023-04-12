@@ -1,11 +1,6 @@
 class UserVotesController < ApplicationController
   before_action :set_user_vote, only: %i[ show edit update destroy ]
 
-  # GET /user_votes or /user_votes.json
-  def index
-    @user_votes = UserVote.all
-  end
-
   # GET /user_votes/1 or /user_votes/1.json
   def show
   end
