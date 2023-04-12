@@ -25,7 +25,7 @@ class UserVotesController < ApplicationController
 
     respond_to do |format|
       if @user_vote.save
-        format.html { redirect_to user_vote_url(@user_vote), notice: "User vote was successfully created." }
+        format.html { redirect_to polls_path, notice: "User vote was recorded successfully." }
         format.json { render :show, status: :created, location: @user_vote }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class UserVotesController < ApplicationController
   def update
     respond_to do |format|
       if @user_vote.update(user_vote_params)
-        format.html { redirect_to user_vote_url(@user_vote), notice: "User vote was successfully updated." }
+        format.html { redirect_to polls_path, notice: "User vote was successfully updated." }
         format.json { render :show, status: :ok, location: @user_vote }
       else
         format.html { render :edit, status: :unprocessable_entity }
