@@ -15,15 +15,12 @@
     <nav class="sticky top-0 max-h-screen flex pl-8">
       <div class="w-[360px] bg-slate-100 p-8 text-slate-900 flex flex-col rounded-lg justify-between">
         <div class="flex flex-col gap-4">
-          <a
-            href="/"
-            class="flex gap-2 items-center flex-shrink-0 mr-6 bg-slate-200 hover:bg-slate-300 p-4 rounded-md transition-all hover:pl-6"
-          >
-            <h4>Test</h4>
-         Test
-         </a>
+          <%= link_to "Home", root_path, class: "flex gap-2 items-center flex-shrink-0 mr-6 bg-slate-200 hover:bg-slate-300 p-4 rounded-md transition-all hover:pl-6" %>
+          <%= link_to "View Polls", polls_path, class: "flex gap-2 items-center flex-shrink-0 mr-6 bg-slate-200 hover:bg-slate-300 p-4 rounded-md transition-all hover:pl-6" %>
+          <%= link_to "Create Poll", new_poll_path, class: "flex gap-2 items-center flex-shrink-0 mr-6 bg-slate-200 hover:bg-slate-300 p-4 rounded-md transition-all hover:pl-6" %>
+          <%= link_to "Create Poll", new_poll_path, class: "flex gap-2 items-center flex-shrink-0 mr-6 bg-slate-200 hover:bg-slate-300 p-4 rounded-md transition-all hover:pl-6" %>
         </div>
-        <div>
+        <div class="py-4">
           <h5>
             © Vote 2023 | All rights reserved
           </h5>
